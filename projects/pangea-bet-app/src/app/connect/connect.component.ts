@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BackendService } from '../backend.service';
 
 @Component({
   selector: 'pangea-bet-connect',
@@ -15,6 +16,7 @@ export class ConnectComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private backendService: BackendService
   ) {
     this.connectForm = this.formBuilder.group({
       ip: ['', [
@@ -28,7 +30,7 @@ export class ConnectComponent implements OnInit {
 
   OnConnect(): void {
     if (this.connectForm.valid) {
-
+      this.backendService.connect(this.ip.value);
     }
   }
 
