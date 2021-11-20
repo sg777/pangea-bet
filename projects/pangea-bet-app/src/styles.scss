@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$pangea-bet-app-primary: mat.define-palette(mat.$indigo-palette);
-$pangea-bet-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$pangea-bet-app-primary: mat.define-palette(mat.$gray-palette, 900);
+$pangea-bet-app-accent: mat.define-palette(mat.$amber-palette, 700);
 
 // The warn palette is optional (defaults to red).
 $pangea-bet-app-warn: mat.define-palette(mat.$red-palette);
@@ -37,3 +37,25 @@ $pangea-bet-app-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  flex: 1 1 100%;
+  place-content: center;
+  max-height: 100%;
+  margin: 10px 10px;
+}
+
+.card-fixed-width {
+  min-width: 300px;
+  max-width: 400px;
+}
